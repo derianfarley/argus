@@ -1,0 +1,50 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  Argus v4.0 — Requirements
+#  Install everything:          pip install -r requirements.txt
+#  Core only (minimal install): pip install -r requirements.txt --no-deps
+#    (then add optional packs below as needed)
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Core (required for most tools) ───────────────────────────────────────────
+requests>=2.32.0          # HTTP client — used by virtually every network tool
+rich>=13.0.0              # Terminal UI: progress bars, panels, tables, colour
+beautifulsoup4>=4.12.0    # HTML parsing — spider, web scanner, lab tester
+scapy>=2.5.0              # Packet capture/analysis, C2 beacon detector
+
+# ── Cryptography ─────────────────────────────────────────────────────────────
+cryptography>=42.0.0      # AES-256-GCM, RSA, PBKDF2 — crypto toolkit + JWT attacks
+
+# ── Password strength ─────────────────────────────────────────────────────────
+zxcvbn>=4.4.28            # Realistic password entropy estimation
+
+# ── Keylogger ────────────────────────────────────────────────────────────────
+pynput>=1.7.6             # Keyboard listener (own machine only)
+pyperclip>=1.8.2          # Clipboard monitoring
+
+# ── PCAP analysis ────────────────────────────────────────────────────────────
+dpkt>=1.9.8               # PCAP file parsing (offline analysis mode)
+
+# ── C2 beacon detector — Tier 2 statistical analysis ─────────────────────────
+numpy>=1.26.0             # FFT, autocorrelation, Shannon entropy on packet flows
+
+# ── OSINT / image geolocation ────────────────────────────────────────────────
+Pillow>=10.0.0            # Image metadata + GPS EXIF extraction
+
+# ── DNS / WHOIS ──────────────────────────────────────────────────────────────
+dnspython>=2.4.0          # DNS record lookups (A, MX, TXT, DMARC, SPF)
+python-whois>=0.9.4       # WHOIS domain registration data
+
+# ── Web scanner extras ───────────────────────────────────────────────────────
+sslyze>=6.0.0             # Deep TLS/SSL certificate and cipher analysis
+fake-useragent>=1.5.0     # Rotating browser User-Agent strings
+wappalyzer-python>=0.1.2  # Technology stack fingerprinting
+
+# ── Spider — JavaScript-rendered page crawling ───────────────────────────────
+playwright>=1.40.0        # Headless Chromium (run: playwright install chromium)
+
+# ── Keylogger — window title tracking (Windows only) ────────────────────────
+# Uncomment on Windows:
+# pygetwindow>=0.0.9      # Active window title detection
+#
+# Linux alternative: sudo apt install xdotool   (no pip package needed)
+# macOS alternative: no extra install           (uses AppleScript via subprocess)
